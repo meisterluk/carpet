@@ -19,8 +19,8 @@ What?
 This is Go implementation of carpet fractals. What is a carpet fractal? One famous example is the Sierpinski carpet:
 
 .Sierpinski carpet
-[caption="Figure 1: Sierpinski carpet",link=gallery/sierpinski_carpet.png]
-image::gallery/sierpinski_carpet.png[Sierpinski carpet,364,364]
+[caption="Figure 1: Sierpinski carpet",link=gallery/sierpinski-6-000000FF.png]
+image::gallery/sierpinski-6-000000FF.png[Sierpinski carpet,364,364]
 
 How does the Sierpinski carpet work? You take a white image of 1×1 pixel. A white pixel will be replaced by 3×3 pixels which are black except for the center white one. Successively, white pixels will be replaced by white 3×3 pixels and black pixels will be replaced by the mentioned almost-black pattern. The number of iterations will define the size of your image and level of detail.
 
