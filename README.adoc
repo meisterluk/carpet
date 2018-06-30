@@ -1,0 +1,95 @@
+README
+======
+
+link:https://img.shields.io/github/release/meisterluk/carpet.svg?style=flat-square[image:https://img.shields.io/github/release/meisterluk/carpet.svg?style=flat-square[Latest version]]
+link:https://godoc.org/github.com/meisterluk/carpet[image:https://godoc.org/github.com/meisterluk/carpet?status.svg[GoDoc]]
+link:LICENSE[image:https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square[Used LICENSE]]
+link:https://goreportcard.com/report/github.com/meisterluk/carpet[image:https://goreportcard.com/badge/github.com/meisterluk/carpet[Go Report Card]]
+
+author::
+  meisterluk
+version::
+  1.0.0
+gonamespace::
+  github.com/meisterluk/carpet
+
+What?
+-----
+
+This is Go implementation of carpet fractals. What is a carpet fractal? One famous example is the Sierpinski carpet:
+
+.Sierpinski carpet
+[caption="Figure 1: Sierpinski carpet",link=docs/sierpinski_carpet.png]
+image::docs/sierpinski_carpet.png[Sierpinski carpet,364,364]
+
+How does the Sierpinski carpet work? You take a white image of 1×1 pixel. A white pixel will be replaced by 3×3 pixels which are black except for the center white one. Successively, white pixels will be replaced by white 3×3 pixels and black pixels will be replaced by the mentioned almost-black pattern. The number of iterations will define the size of your image and level of detail.
+
+In essence, I watched link:https://friendlyfieldsandopenmaps.com/2017/09/18/the-pi-fractal/[jrhodkinson's “Carpets, Genetics, and the Pi Fractal” talk] and was amazed by the beauty. So I implemented it.
+
+This implementation allows you to generate images of such structure. You can define the rules/patterns by yourself.
+You can either get the binary executable or use this implementation as a go dependency.
+
+How to use
+----------
+
+1. Go to the releases tab
+2. Download the executable appropriate for your computer architecture
+3. Start the executable (Linux: with your favorite shell, Windows: powershell or cmd.exe) without arguments to get usage information
+4. Start the executable with proper arguments.
+5. Look at the cool images
+
+Wait… proper arguments? Can I have some simple example please?
+
+1. Go to the releases tab
+2. Download the executable appropriate for your computer architecture
+3. Download the github repository (click on the green button "Clone or download" and "Download ZIP")
+4. Decompress the github repository files and put the executable in its root folder
+5. Start your favorite shell, PowerShell or cmd.exe
+6. Change directory to the root of the github folder
+7. Run `carpet examples/sierpinski 6 out.png`
+8. Open the `out.png` image in your image viewer and be amazed by its beauty.
+
+How to build
+------------
+
+Use `go get` to retrieve the source code:
+
+[source,bash]
+go get github.com/meisterluk/carpet
+
+Examples
+--------
+
+CLI arguments
+-------------
+
+1. A filepath to a directory containing rule files. Rule files must be square PNG files with filenames matching `rule-<RGBA-color>.png` where `<RGBA-color>` is a placeholder for a 8-character hexadecimal representation of a RGBA color.
+2. The number of iterations to apply to generate the image
+3. The output PNG file path
+4. The initial color (what is the color the generating image is painted with?) as 8-character hexadecimal representation of a RGBA color
+
+Source code
+-----------
+
+Available at link:https://github.com/meisterluk/carpet[github].
+
+Feedback and issues
+-------------------
+
+Please submit any feedback at link:https://github.com/meisterluk/carpet/issues[Github].
+
+Feature wishlist
+----------------
+
+* Support non-square rules
+
+License
+-------
+
+See link:LICENSE[the LICENSE file] (Hint: MIT license).
+
+Changelog
+---------
+
+1.0.0::
+  initial release
